@@ -1,0 +1,27 @@
+name: agnos-test
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - pyyaml
+  - python-dotenv
+  - pip:
+      # UI
+      - gradio==5.34.0
+
+      # LangChain + providers
+      - langchain==0.3.25
+      - langchain-community==0.3.25
+      - langchain-openai==0.3.23
+      - langchain-ollama==0.3.7
+      - openai==1.86.0
+
+      # Neo4j vector store
+      - neo4j==5.28.2
+
+      # Embeddings (BGE-m3 via sentence-transformers; pulls CPU Torch wheels)
+      - sentence-transformers==4.1.0
+      - huggingface-hub==0.34.3

@@ -1,0 +1,36 @@
+# Minimal knobs you might change often
+retrieval:
+  top_k_thread: 5
+  top_k_disease: 3
+
+neo4j_index:
+  threads:
+    index_name: "thread_titlecat_idx"
+    text_node_property: "title_category"
+    retrieval_query: |
+      WITH node, score
+      WHERE node.answer_by_doctor IS NOT NULL AND node.answer_by_doctor <> ''
+      RETURN
+        trim(node.answer_by_doctor) AS text,
+        score,
+        {source: node.url, type: 'thread', title: node.title, category: node.thread_category} AS metadata
+  diseases:
+    index_name: "disease_symptom_idx"
+    text_node_property: "symptom_disease"
+    retrieval_query: |
+      RETURN
+        coalesce(node.thai_name, node.title, '') + ' / ' + coalesce(node.english_name,'') + '\n' +
+        'Symptoms: '   + coalesce(node.symptoms,'')   + '\n' +
+        'Treatment: '  + coalesce(node.treatment,'')  + '\n' +
+        'Precautions: '+ coalesce(node.precautions,'')+ '\n' +
+        'Specialist: ' + coalesce(node.specialist_doctor_recommended,'')
+        AS text,
+        score,
+        {source: node.url, type: 'disease', title: node.title} AS metadata
+
+ui:
+  title: "Agnos Health Q&A"
+  cover_image: "assets/agnos_health_cover.jpg"
+
+prompts:
+  system_th_path: "prompts/system_th.txt"
