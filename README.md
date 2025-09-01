@@ -11,6 +11,13 @@ Works with either:
 
 > ⚠️ Health disclaimer: This app provides general information only; it does not diagnose or replace professional medical advice.
 
+<p align="center">
+  <video src="assets/agnos_demo.mp4" width="720" controls muted playsinline>
+    Your browser does not support the video tag. Watch the
+    <a href="assets/agnos_demo.mp4">demo video</a>.
+  </video>
+</p>
+
 ---
 
 ## Contents
