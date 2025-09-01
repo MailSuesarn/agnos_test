@@ -11,11 +11,7 @@ Works with either:
 
 > ⚠️ Health disclaimer: This app provides general information only; it does not diagnose or replace professional medical advice.
 
-<p align="center">
-  <a href="assets/agnos_demo.mp4">
-    <img src="assets/agnos_health_cover.jpg" alt="Watch demo video" width="720">
-  </a>
-</p>
+https://github.com/user-attachments/assets/71e26c64-a62e-4913-b7bd-e8dd6809c9fb
 
 ---
 
